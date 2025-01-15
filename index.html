@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', Times, serif, sans-serif;
+            background: linear-gradient(135deg, #cf64f9, #f8f391, #88cbf8);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: #741717;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.5em;
+            color: #ffffff;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tabs button {
+            flex: 1;
+            padding: 15px;
+            border: whitesmoke;
+            background: #f891ba;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .tabs button:hover, .tabs button.active {
+            background: #fd78fb;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function openTab(evt, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabLinks = document.querySelectorAll('.tabs button');
+
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            tabLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>All about Tanisi Reddy</h1>
+        <p>How exciting! I'm such an interesting person right?</p>
+    </header>
+
+    <div class="tabs">
+        <button class="active" onclick="openTab(event, 'about')">About Me</button>
+        <button onclick="openTab(event, 'hobbies')">Hobbies</button>
+        <button onclick="openTab(event, 'trivia')">Trivia</button>
+    </div>
+
+    <section id="about" class="tab-content active">
+        <h2>About Me</h2>
+        <p>Hey! My name is Tanisi and I'm a Sophomore in SBHS and I love to be creative and think outside the box. I'm 16 and I'm an only child who loves to laugh. I love to watch TV and I plan to major in Digital Design and Media in college! This website is my little corner of the internet where I can share more about myself and and my interests!</p>
+    </section>
+
+    <section id="hobbies" class="tab-content">
+        <h2>My Hobbies</h2>
+        <p>Some of my most favorite things to do is to make art! I'm good at many different mediums of art, such as painting, drawing, and digital art on my ipad. I am also good at editing and video production. Volleyball is also something that I love and I commit lots of time to. I even made the Varsity volleyball team at school! I started playing in 7th grade, and ever since then I've fallen in love with it. I also like to watch youtube and anime in my free time, it's almost an addiction lol. I cannot live without music, and my favorite artist is Chase Atlantic. I know everysingle one of their songs! I really want to go to one of their concerts someday.</p>
+    </section>
+
+    <section id="trivia" class="tab-content">
+        <h2>Trivia</h2>
+        <p>Think you know me? Guess my favorite things below!</p>
+        <ul>
+            <li>Favorite Color: <input type="text" placeholder="Your guess here"></li>
+            <li>Favorite Food: <input type="text" placeholder="Your guess here"></li>
+            <li>Favorite Hobby: <input type="text" placeholder="Your guess here"></li>
+            <li>Favorite Artist: <input type="text" placeholder="Your guess here"></li>
+            <li>Favorite Sport: <input type="text" placeholder="Your guess here"></li>
+        </ul>
+        <button onclick="alert('Thanks for guessing!')">Submit</button>
+    </section>
+
+    <footer>
+        &copy; 2025 Tanisi Reddy. All rights reserved.
+    </footer>
+</body>
+</html>
+
+
